@@ -23,7 +23,7 @@ INCLUDEPATH += \
         3rdparty/ta-lib/include \
         3rdparty/libjson
 
-LIBS +=-L/home/dev/third_party/boost/boost_1_61_0/stage/lib  -lboost_system -lboost_thread
+LIBS +=-L/home/dev/third_party/boost/boost_1_61_0/stage/lib  -lboost_system -lboost_log  -lboost_log_setup -lboost_filesystem -lboost_thread
 
 QMAKE_CFLAGS_RELEASE += \
         -DSQLITE_MAX_COLUMN=256 \
@@ -34,12 +34,14 @@ QMAKE_CFLAGS_RELEASE += \
         -DSQLITE_TEMP_STORE=2 \
         -DSQLITE_DEFAULT_PAGE_SIZE=4096 \
         -DJSON_ISO_STRICT \
-        -D_CRT_SECURE_NO_WARNINGS
+        -D_CRT_SECURE_NO_WARNINGS\
+        -DBOOST_LOG_DYN_LINK
 
 QMAKE_CXXFLAGS_RELEASE += -DJSON_ISO_STRICT
 
 linux-g++* {
-    QMAKE_CXXFLAGS += -std=c++11
+    QMAKE_CXXFLAGS += -std=c++11\
+            -DBOOST_LOG_DYN_LINK
 }
 
 unix {
@@ -278,7 +280,9 @@ SOURCES += main.cpp\
                 3rdparty/libjson/_internal/Source/JSONWorker.cpp \
                 3rdparty/libjson/_internal/Source/JSONWriter.cpp \
                 3rdparty/libjson/_internal/Source/internalJSONNode.cpp \
-                3rdparty/libjson/_internal/Source/libjson.cpp
+                3rdparty/libjson/_internal/Source/libjson.cpp \
+    utils/log.cpp \
+    utils/timer.cpp
 
 
 HEADERS  += ifquant.h \
@@ -332,7 +336,8 @@ HEADERS  += ifquant.h \
     3rdparty/ta-lib/ta_abstract/templates/ta_func.h.template \
     3rdparty/ta-lib/ta_abstract/templates/ta_func_api.c.template \
     3rdparty/ta-lib/ta_abstract/templates/ta_retcode.c.template \
-    common/appinfo.h
+    common/appinfo.h \
+    utils/log.h
 
 FORMS    += ifquant.ui
 

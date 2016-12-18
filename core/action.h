@@ -5,7 +5,7 @@ class event;
 
 class action {
  public:
-    virtual void handler(event ev);
+    virtual void handler(event &ev);
 };
 
 #endif // ACTION_H
