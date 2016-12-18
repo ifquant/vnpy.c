@@ -6,7 +6,7 @@
 #define APPWEBPAGE			"127.0.0.1"
 #define APPFORUM			"127.0.0.1"
 #define APPEMAIL			"ifquant@163.com"
-#define APPAUTHOR			"LvWeng Jian"
+#define APPAUTHOR			"ifquant"
 #define APPCOPYRIGHT		"(C) 2013-2016 LvWengJian. All rights reserved."
 #define DBVERSION			7
 #define DBNAME				"fcgbase.dat"
