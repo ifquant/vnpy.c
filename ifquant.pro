@@ -67,7 +67,6 @@ unix {
 
 SOURCES += main.cpp\
         ifquant.cpp \
-    core/eventengine.cpp \
     gui/gui.cpp \
     utils/boost_helper.cpp \
     core/action.cpp \
@@ -282,11 +281,17 @@ SOURCES += main.cpp\
                 3rdparty/libjson/_internal/Source/internalJSONNode.cpp \
                 3rdparty/libjson/_internal/Source/libjson.cpp \
     utils/log.cpp \
-    utils/timer.cpp
+    utils/timer.cpp \
+    core/compute_engine.cpp \
+    core/excute_engine.cpp \
+    core/io_engine.cpp \
+    core/strategy_engine.cpp \
+    core/trade_engine.cpp \
+    core/event_engine.cpp \
+    core/gateway.cpp
 
 
 HEADERS  += ifquant.h \
-    core/eventengine.h \
     utils/boost_helper.h \
     core/action.h \
                 3rdparty/ta-lib/include/ta_frame_priv.h \
@@ -337,7 +342,10 @@ HEADERS  += ifquant.h \
     3rdparty/ta-lib/ta_abstract/templates/ta_func_api.c.template \
     3rdparty/ta-lib/ta_abstract/templates/ta_retcode.c.template \
     common/appinfo.h \
-    utils/log.h
+    utils/log.h \
+    core/event_engine.h \
+    core/gateway.h \
+    core/struct.h
 
 FORMS    += ifquant.ui
 

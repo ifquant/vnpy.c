@@ -5,7 +5,7 @@
 #include <map>
 #include <vector>
 #include "action.h"
-
+#include <boost/thread/thread.hpp>
 using namespace std;
 
 struct event {
@@ -25,7 +25,7 @@ public:
 private:
         int running;
         std::queue<event> ev_queue;
-
+        boost::thread_group threads;
         /**
          * @brief ev_map
          * @todo show we use a map  && vector?

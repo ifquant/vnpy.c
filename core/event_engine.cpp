@@ -11,7 +11,6 @@ eventengine::eventengine()
 
 void eventengine::init()
 {
-     boost::thread_group threads;
      boost::thread *t = new boost::thread(&eventengine::__run, this);
      threads.add_thread(t);
 }
