@@ -21,10 +21,11 @@ INCLUDEPATH += \
         include \
         3rdparty/sqlite3/include \
         3rdparty/ta-lib/include \
-        3rdparty/libjson
+        3rdparty/libjson\
+        3rdparty/asmlib
 
 LIBS +=-L/home/dev/third_party/boost/boost_1_61_0/stage/lib  -lboost_system -lboost_log  -lboost_log_setup -lboost_filesystem -lboost_thread
-
+LIBS +=-L/home/dev/Desktop/working\ code/vnpy-c/3rdparty/asmlib -laelf64
 QMAKE_CFLAGS_RELEASE += \
         -DSQLITE_MAX_COLUMN=256 \
         -DSQLITE_MAX_SQL_LENGTH=134217728 \
@@ -288,7 +289,8 @@ SOURCES += main.cpp\
     core/strategy_engine.cpp \
     core/trade_engine.cpp \
     core/event_engine.cpp \
-    core/gateway.cpp
+    core/gateway.cpp \
+    api/ctp/ctpgateway.cpp
 
 
 HEADERS  += ifquant.h \
@@ -345,7 +347,14 @@ HEADERS  += ifquant.h \
     utils/log.h \
     core/event_engine.h \
     core/gateway.h \
-    core/struct.h
+    core/struct.h \
+    3rdparty/asmlib/asmlib.h \
+    3rdparty/asmlib/asmlibran.h \
+    api/ctp/linux64/ThostFtdcMdApi.h \
+    api/ctp/linux64/ThostFtdcTraderApi.h \
+    api/ctp/linux64/ThostFtdcUserApiDataType.h \
+    api/ctp/linux64/ThostFtdcUserApiStruct.h \
+    api/ctp/ctpgateway.h
 
 FORMS    += ifquant.ui
 
@@ -368,4 +377,108 @@ DISTFILES += \
     3rdparty/ta-lib/ta_abstract/templates/ta_group_idx.c.template \
     3rdparty/ta-lib/ta_abstract/templates/ta_java_defs.h.template \
     3rdparty/ta-lib/ta_abstract/templates/ta_x.c.template \
-    README.md
+    README.md \
+    3rdparty/asmlib/libaomf32.lib \
+    3rdparty/asmlib/libaomf32o.lib \
+    3rdparty/asmlib/asmlib-instructions.pdf \
+    3rdparty/asmlib/libacof32.lib \
+    3rdparty/asmlib/libacof32o.lib \
+    3rdparty/asmlib/libacof64.lib \
+    3rdparty/asmlib/libacof64o.lib \
+    3rdparty/asmlib/libad32.lib \
+    3rdparty/asmlib/libad64.lib \
+    3rdparty/asmlib/libaelf32.a \
+    3rdparty/asmlib/libaelf32o.a \
+    3rdparty/asmlib/libaelf64.a \
+    3rdparty/asmlib/libaelf64o.a \
+    3rdparty/asmlib/libamac32.a \
+    3rdparty/asmlib/libamac32o.a \
+    3rdparty/asmlib/libamac64.a \
+    3rdparty/asmlib/libamac64o.a \
+    3rdparty/asmlib/libad32.dll \
+    3rdparty/asmlib/libad64.dll \
+    3rdparty/asmlib/src/asmlibSrc.zip \
+    3rdparty/asmlib/asmlibSrc.zip \
+    3rdparty/asmlib/inteldispatchpatch.zip \
+    3rdparty/asmlib/src/asmlib.make \
+    3rdparty/asmlib/src/libad32.def \
+    3rdparty/asmlib/src/libad64.def \
+    3rdparty/asmlib/src/MakeAsmlib.bat \
+    3rdparty/asmlib/src/randomah.asi \
+    3rdparty/asmlib/license.txt \
+    3rdparty/asmlib/src/cachesize32.asm \
+    3rdparty/asmlib/src/cachesize64.asm \
+    3rdparty/asmlib/src/cpuid32.asm \
+    3rdparty/asmlib/src/cpuid64.asm \
+    3rdparty/asmlib/src/cputype32.asm \
+    3rdparty/asmlib/src/cputype64.asm \
+    3rdparty/asmlib/src/debugbreak32.asm \
+    3rdparty/asmlib/src/debugbreak64.asm \
+    3rdparty/asmlib/src/dispatchpatch32.asm \
+    3rdparty/asmlib/src/dispatchpatch64.asm \
+    3rdparty/asmlib/src/divfixedi32.asm \
+    3rdparty/asmlib/src/divfixedi64.asm \
+    3rdparty/asmlib/src/divfixedv32.asm \
+    3rdparty/asmlib/src/divfixedv64.asm \
+    3rdparty/asmlib/src/instrset32.asm \
+    3rdparty/asmlib/src/instrset64.asm \
+    3rdparty/asmlib/src/libad32.asm \
+    3rdparty/asmlib/src/libad64.asm \
+    3rdparty/asmlib/src/memcmp32.asm \
+    3rdparty/asmlib/src/memcmp64.asm \
+    3rdparty/asmlib/src/memcpy32.asm \
+    3rdparty/asmlib/src/memcpy64.asm \
+    3rdparty/asmlib/src/memmove32.asm \
+    3rdparty/asmlib/src/memmove64.asm \
+    3rdparty/asmlib/src/memset32.asm \
+    3rdparty/asmlib/src/memset64.asm \
+    3rdparty/asmlib/src/mersenne32.asm \
+    3rdparty/asmlib/src/mersenne64.asm \
+    3rdparty/asmlib/src/mother32.asm \
+    3rdparty/asmlib/src/mother64.asm \
+    3rdparty/asmlib/src/physseed32.asm \
+    3rdparty/asmlib/src/physseed64.asm \
+    3rdparty/asmlib/src/popcount32.asm \
+    3rdparty/asmlib/src/popcount64.asm \
+    3rdparty/asmlib/src/procname32.asm \
+    3rdparty/asmlib/src/procname64.asm \
+    3rdparty/asmlib/src/rdtsc32.asm \
+    3rdparty/asmlib/src/rdtsc64.asm \
+    3rdparty/asmlib/src/round32.asm \
+    3rdparty/asmlib/src/round64.asm \
+    3rdparty/asmlib/src/sfmt32.asm \
+    3rdparty/asmlib/src/sfmt64.asm \
+    3rdparty/asmlib/src/strcat32.asm \
+    3rdparty/asmlib/src/strcat64.asm \
+    3rdparty/asmlib/src/strcmp32.asm \
+    3rdparty/asmlib/src/strcmp64.asm \
+    3rdparty/asmlib/src/strcountset32.asm \
+    3rdparty/asmlib/src/strcountset64.asm \
+    3rdparty/asmlib/src/strcountutf832.asm \
+    3rdparty/asmlib/src/strcountutf864.asm \
+    3rdparty/asmlib/src/strcpy32.asm \
+    3rdparty/asmlib/src/strcpy64.asm \
+    3rdparty/asmlib/src/stricmp32.asm \
+    3rdparty/asmlib/src/stricmp64.asm \
+    3rdparty/asmlib/src/strlen32.asm \
+    3rdparty/asmlib/src/strlen64.asm \
+    3rdparty/asmlib/src/strspn32.asm \
+    3rdparty/asmlib/src/strspn64.asm \
+    3rdparty/asmlib/src/strstr32.asm \
+    3rdparty/asmlib/src/strstr64.asm \
+    3rdparty/asmlib/src/strtouplow32.asm \
+    3rdparty/asmlib/src/strtouplow64.asm \
+    3rdparty/asmlib/src/substring32.asm \
+    3rdparty/asmlib/src/substring64.asm \
+    3rdparty/asmlib/src/unalignedisfaster32.asm \
+    3rdparty/asmlib/src/unalignedisfaster64.asm \
+    api/API/v6.3.6_20160606_api_tradeapi_linux64/thostmduserapi.so \
+    api/API/v6.3.6_20160606_api_tradeapi_linux64/thosttraderapi.so \
+    api/API/v6.3.6_20160606_api_tradeapi_linux64/error.xml \
+    api/API/v6.3.6_20160606_api_tradeapi_linux64/error.dtd \
+    doc/CTPcdg_ch.pdf \
+    api/ctp/linux64/thostmduserapi.so \
+    api/ctp/linux64/thosttraderapi.so \
+    api/ctp/linux64/error.xml \
+    api/ctp/linux64/error.dtd \
+    api/ctp/63620160606API.zip

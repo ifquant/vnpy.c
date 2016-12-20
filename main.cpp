@@ -2,11 +2,11 @@
 #include <QApplication>
 #include "ta_libc.h"
 
-#include "core/eventengine.h"
+#include "core/event_engine.h"
 #include "utils/boost_helper.h"
 
 #include "common/appinfo.h"
-
+#include "asmlib.h"
 boost::mutex io_mutex;
 void count(int id)
 {
@@ -22,6 +22,8 @@ void count(int id)
 
 int main(int argc, char *argv[])
 {
+    char aa[20],bb[20];
+    A_memcpy(aa,bb,10);
 #if 1
     QApplication a(argc, argv);
 
