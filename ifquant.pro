@@ -25,7 +25,8 @@ INCLUDEPATH += \
         3rdparty/asmlib
 
 LIBS +=-L/home/dev/third_party/boost/boost_1_61_0/stage/lib  -lboost_system -lboost_log  -lboost_log_setup -lboost_filesystem -lboost_thread
-LIBS +=-L/home/dev/Desktop/working\ code/vnpy-c/3rdparty/asmlib -laelf64
+LIBS +=-L/home/dev/Desktop/workingcode/vnpy-c/3rdparty/asmlib -laelf64
+LIBS +=-L/home/dev/Desktop/workingcode/vnpy-c/api/ctp/linux64 -lthostmduserapi  -lthosttraderapi
 QMAKE_CFLAGS_RELEASE += \
         -DSQLITE_MAX_COLUMN=256 \
         -DSQLITE_MAX_SQL_LENGTH=134217728 \
