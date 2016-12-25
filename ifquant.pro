@@ -355,7 +355,10 @@ HEADERS  += ifquant.h \
     api/ctp/linux64/ThostFtdcTraderApi.h \
     api/ctp/linux64/ThostFtdcUserApiDataType.h \
     api/ctp/linux64/ThostFtdcUserApiStruct.h \
-    api/ctp/ctpgateway.h
+    api/ctp/ctpgateway.h \
+    3rdparty/concurrentqueue/internal/concurrentqueue_internal_debug.h \
+    3rdparty/concurrentqueue/blockingconcurrentqueue.h \
+    3rdparty/concurrentqueue/concurrentqueue.h
 
 FORMS    += ifquant.ui
 

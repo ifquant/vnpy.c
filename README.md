@@ -21,6 +21,9 @@ timer     boost 定时器 更好的实现方案。求推荐
 
 
 
+add ConcurrentQueue. https://github.com/cameron314/concurrentqueue 待测试
+
+
 
 
 

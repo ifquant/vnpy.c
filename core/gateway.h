@@ -8,6 +8,30 @@ class GateWayInfo {
 
 };
 
+enum  GW_DETAIL_ERROR {
+    GW_ONCONNECT=1,
+    GW_ONDISCONNECT=2,
+    GW_ONUSERLOGIN=3,
+    GW_ONRSPUSERLOGOUT=4,
+    GW_ONRSPAUTH=5,
+    GW_ONRSPORDERINSERT=6,
+    GW_ONRSPQRYPOSITION=7,
+    GW_ONRSPQRYACCOUNT=8,
+    GW_ONRSPERROR=9,
+    GW_ONERRRTNORDERINSERT=10,
+    GW_ONRSPPASSWORD,
+    GW_ONRSPTAPASSWORD,
+};
+
+enum  GW_ERROR {
+    GW_ERR_TICK,
+    GW_ERR_TRADE,
+    GW_ERR_ORDER,
+    GW_ERR_POSITION,
+    GW_ERR_ACCOUNT,
+    GW_ERR_CONNECT,
+};
+
 class  Api_GateWay {
 public:
        Api_GateWay( eventengine *eveg, GateWayInfo  *gw_info);

@@ -122,10 +122,13 @@ public:
 
 class ErrorData : public vdata {
 public:
-    string errID;  //# 错误代码
+    int err_type;  //# 错误代码
+    int err_time;  //# 错误生成时间
     string errMsg; //# 错误信息
-    void   *any;   // # 补充信息
-    int    time;   //# 错误生成时间
+    union  {
+    void   *edata; //# 补充信息
+    int     errID;
+    } data;
 };
 
 class LogData : public vdata {
